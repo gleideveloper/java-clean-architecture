@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-public class UserEntityTest {
+public class UserBuilderEntityTest {
     @Test
     public void notRegisterCPFInvalidFormat() {
         Assertions.assertThrows(IllegalArgumentException.class,
@@ -19,16 +19,18 @@ public class UserEntityTest {
 
     @Test
     public void mustCreateUserWithUserFactory() {
-        var userBuilder = new User.UserBuilder();
-        userBuilder.withNameCpfBirthDate("Emily", "654.123.897-88", LocalDate.parse("1996-10-20"));
-        var user = userBuilder.build();
+        var user = new User.UserBuilder()
+                .withNameCpfBirthDate("Emily", "654.123.897-88", LocalDate.parse("1996-10-20"))
+                .build();
 
 
-//        Assertions.assertEquals("Emily", user.getName());
+        Assertions.assertEquals("Emily", user.getName());
 
-//        user = userBuilder.includeAddress("12345-999", 40, "Apto 401");
-//
-//        Assertions.assertEquals("Apto 401", user.getAddress().getComplement());
+        user = new User.UserBuilder()
+                .includeAddress("12345-999", 40, "Apto 401")
+                .build();
+
+        Assertions.assertEquals("Apto 401", user.getAddress().getComplement());
 
     }
 }
