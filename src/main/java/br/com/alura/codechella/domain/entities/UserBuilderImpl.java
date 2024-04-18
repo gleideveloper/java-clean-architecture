@@ -4,14 +4,14 @@ import br.com.alura.codechella.domain.Address;
 
 import java.time.LocalDate;
 
-public class User {
-    private String name;
-    private String cpf;
-    private LocalDate birthDate;
-    private String email;
-    private Address address;
+public class UserBuilderImpl {
+    private final String name;
+    private final String cpf;
+    private final LocalDate birthDate;
+    private final String email;
+    private final Address address;
 
-    public User(UserBuilder userBuilder) {
+    public UserBuilderImpl(Builder userBuilder) {
         this.name = userBuilder.name;
         this.cpf = userBuilder.cpf;
         this.birthDate = userBuilder.birthDate;
@@ -19,27 +19,29 @@ public class User {
         this.address = userBuilder.address;
     }
 
-    public static class UserBuilder {
+    public static class Builder implements UserBuilder {
         private String name;
         private String cpf;
         private LocalDate birthDate;
         private String email;
         private Address address;
 
-        public UserBuilder withNameCpfBirthDate(String name, String cpf, LocalDate birthDate) {
+        @Override
+        public Builder withNameCpfBirthDate(String name, String cpf, LocalDate birthDate) {
             this.name = name;
             this.cpf = cpf;
             this.birthDate = birthDate;
             return this;
         }
 
-        public UserBuilder includeAddress(String zipCode, Integer number, String complement) {
+        @Override
+        public Builder includeAddress(String zipCode, Integer number, String complement) {
             this.address = new Address(zipCode, number, complement);
             return this;
         }
 
-        public User build() {
-            return new User(this);
+        public UserBuilderImpl build() {
+            return new UserBuilderImpl(this);
         }
     }
 

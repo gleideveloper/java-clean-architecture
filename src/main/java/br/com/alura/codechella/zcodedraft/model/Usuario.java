@@ -1,4 +1,4 @@
-package br.com.alura.codechella.draft.model;
+package br.com.alura.codechella.zcodedraft.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

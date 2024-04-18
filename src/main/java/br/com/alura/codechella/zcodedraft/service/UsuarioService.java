@@ -1,6 +1,6 @@
-package br.com.alura.codechella.draft.service;
+package br.com.alura.codechella.zcodedraft.service;
 
-import br.com.alura.codechella.draft.model.Usuario;
+import br.com.alura.codechella.zcodedraft.model.Usuario;
 
 import java.util.List;
 

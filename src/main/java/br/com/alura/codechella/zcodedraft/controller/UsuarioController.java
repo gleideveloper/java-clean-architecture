@@ -1,7 +1,7 @@
-package br.com.alura.codechella.draft.controller;
+package br.com.alura.codechella.zcodedraft.controller;
 
-import br.com.alura.codechella.draft.service.UsuarioService;
-import br.com.alura.codechella.draft.model.Usuario;
+import br.com.alura.codechella.zcodedraft.service.UsuarioService;
+import br.com.alura.codechella.zcodedraft.model.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

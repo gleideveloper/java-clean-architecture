@@ -3,8 +3,9 @@ package br.com.alura.codechella.domain.entities.user;
 import br.com.alura.codechella.domain.Address;
 
 import java.time.LocalDate;
+import java.time.Period;
 
-public class UserEntity {
+public class User {
 
     private String name;
     private String cpf;
@@ -12,10 +13,18 @@ public class UserEntity {
     private String email;
     private Address address;
 
-    public UserEntity(String name, String cpf, LocalDate birthDate, String email, Address address) {
+    public User(String name, String cpf, LocalDate birthDate, String email, Address address) {
         if (cpf == null || !cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
             throw new IllegalArgumentException("CPF no padrão incorreto!");
         }
+        // Calcula a idade com base na data de nascimento e a data atual
+        int age = Period.between(birthDate, LocalDate.now()).getYears();
+
+        // Verifica se a idade é inferior a 18 anos e lança uma exceção se for
+        if (age < 18) {
+            throw new IllegalArgumentException("Usuário deve ter pelo menos 18 anos de idade!");
+        }
+
         this.name = name;
         this.cpf = cpf;
         this.birthDate = birthDate;

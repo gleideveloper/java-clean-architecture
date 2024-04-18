@@ -1,7 +1,7 @@
-package br.com.alura.codechella.draft.service;
+package br.com.alura.codechella.zcodedraft.service;
 
-import br.com.alura.codechella.draft.model.Usuario;
-import br.com.alura.codechella.draft.repository.UsuarioRepository;
+import br.com.alura.codechella.zcodedraft.model.Usuario;
+import br.com.alura.codechella.zcodedraft.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
