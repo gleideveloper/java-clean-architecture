@@ -1,7 +1,0 @@
-[
-User{name='Myron Yundt', cpf='179.865.049-15', birthDate=1985-12-25, email='Yasmin40@yahoo.com', address=null}
-, 
-User{name='Crystal Moore', cpf='179.865.049-15', birthDate=1985-12-25, email='Doyle.Leffler@hotmail.com', address=null}
-, 
-User{name='Gail Stanton', cpf='179.865.049-15', birthDate=1985-12-25, email='Bryon_Dickinson59@gmail.com', address=null}
-]
