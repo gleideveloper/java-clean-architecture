@@ -10,6 +10,6 @@ public interface UserRepository {
 
     User changeEmailUser(String cpf, String email);
 
-    List<User> getAllUsers();
+    List<User> getAll();
 
 }

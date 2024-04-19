@@ -71,4 +71,15 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", birthDate=" + birthDate +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }
