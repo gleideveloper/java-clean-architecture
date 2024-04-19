@@ -13,4 +13,6 @@ App de simulação de um site para venda de ingressos de eventos diversos
 - Entender sobre entidades, objetos de valor, casos de uso, repositórios e controladores;
 - Analisar os prós e contras de arquiteturas que utilizam muitas camadas de abstração.
 
-
+## Arquitetura Limpa (Clean Architecture) é um padrão arquitetural proposto por Robert Martin (Vulgo Uncle Bob)
+- O objetivo de promover a implementação de sistemas que favorecem reusabilidade de código, coesão, independência de tecnologia e testabilidade
+![image](https://github.com/gleideveloper/java-clean-architecture/assets/5949025/94c4dee2-cf11-4d78-8da0-c8516c167351)
