@@ -10,7 +10,6 @@ import br.com.alura.codechella.infrastructure.gateways.UserServiceJPAImpl;
 import br.com.alura.codechella.infrastructure.persistence.UserRepositoryJPA;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class UserConfig {
@@ -20,15 +19,15 @@ public class UserConfig {
         return new CreateUser(userRepository);
     }
 
-//    @Bean
-//    UserServiceJPAImpl userServiceImpl(UserRepositoryJPA userRepositoryJPA, UserEntityMapper userEntityMapper){
-//        return new UserServiceJPAImpl(userRepositoryJPA, userEntityMapper);
-//    }
-//
-//    @Bean
-//    UserEntityMapper userEntityMapper(){
-//        return new UserEntityMapper();
-//    }
+    @Bean
+    UserServiceJPAImpl userServiceImpl(UserRepositoryJPA userRepositoryJPA, UserEntityMapper userEntityMapper){
+        return new UserServiceJPAImpl(userRepositoryJPA, userEntityMapper);
+    }
+
+    @Bean
+    UserEntityMapper userEntityMapper(){
+        return new UserEntityMapper();
+    }
 
     @Bean
     ListUser listUser(UserRepository userRepository){

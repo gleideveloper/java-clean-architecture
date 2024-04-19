@@ -27,12 +27,12 @@ public class UserController {
     @PostMapping
     public ResponseEntity<Void> cadastrar(@RequestBody @Valid UserDTO userDTO) {
         var user = createUser.saveUser(new User(userDTO.name(), userDTO.cpf(), userDTO.birthDate(), userDTO.email(), null));
-        this.recordDataFile.Record("fileName.txt");
         return ResponseEntity.ok().build();
     }
 
     @GetMapping
     public ResponseEntity<List<User>> listar() {
+        this.recordDataFile.Record("fileName.txt");
         return ResponseEntity.ok().body(listUser.getAll());
     }
 }
