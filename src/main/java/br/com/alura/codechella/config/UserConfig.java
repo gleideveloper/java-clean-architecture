@@ -34,14 +34,14 @@ public class UserConfig {
         return new ListUser(userRepository);
     }
 
-    @Bean
-    UserServiceInFileImpl userServiceInFile(){
-        return new UserServiceInFileImpl();
-    }
-
-    @Bean
-    public RecordDataFile recordDataFile(UserRepository userRepository) {
-        return new RecordDataFile(userRepository);
-    }
+//    @Bean
+//    UserServiceInFileImpl userServiceInFile(){
+//        return new UserServiceInFileImpl();
+//    }
+//
+//    @Bean
+//    public RecordDataFile recordDataFile(UserRepository userRepository) {
+//        return new RecordDataFile(userRepository);
+//    }
 
 }

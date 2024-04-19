@@ -16,12 +16,12 @@ public class UserController {
 
     private final CreateUser createUser;
     private final ListUser listUser;
-    private final RecordDataFile recordDataFile;
+//    private final RecordDataFile recordDataFile;
 
-    public UserController(CreateUser createUser, ListUser listUser, RecordDataFile recordDataFile) {
+    public UserController(CreateUser createUser, ListUser listUser) {
         this.createUser = createUser;
         this.listUser = listUser;
-        this.recordDataFile = recordDataFile;
+//        this.recordDataFile = recordDataFile;
     }
 
     @PostMapping
@@ -32,7 +32,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> listar() {
-        this.recordDataFile.Record("fileName.txt");
+//        this.recordDataFile.Record("fileName.txt");
         return ResponseEntity.ok().body(listUser.getAll());
     }
 }
