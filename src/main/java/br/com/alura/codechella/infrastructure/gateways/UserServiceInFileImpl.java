@@ -31,15 +31,16 @@ public class UserServiceInFileImpl implements UserRepository {
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(fileName);
+            fileWriter.write(userList.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        for (User user : userList) {
-            try {
-                fileWriter.write(user.toString());
-                fileWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        } finally {
+            if (fileWriter != null) {
+                try {
+                    fileWriter.close();
+                } catch (IOException e) {
+                    System.err.println("Failed to close FileWriter: " + e.getMessage());
+                }
             }
         }
     }

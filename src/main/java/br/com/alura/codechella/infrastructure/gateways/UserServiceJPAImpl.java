@@ -39,4 +39,9 @@ public class UserServiceJPAImpl implements UserRepository {
                 .map(mapper::toDomainUser)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void recordDataFile(String fileName) {
+
+    }
 }

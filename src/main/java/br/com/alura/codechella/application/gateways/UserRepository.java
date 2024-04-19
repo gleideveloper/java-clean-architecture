@@ -12,4 +12,6 @@ public interface UserRepository {
 
     List<User> getAll();
 
+    void recordDataFile(String fileName);
+
 }
